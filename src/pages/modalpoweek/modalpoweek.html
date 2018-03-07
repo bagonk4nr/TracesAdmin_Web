@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ModalabsentodayonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PO Performance (This Week)</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()" class="icon-cross" >
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <th class="font-size-base">NO</th>
+          <th class="font-size-base">DISTRIBUTOR</th>
+          <th class="font-size-base">SPV</th>
+          <th class="font-size-base">ASM/RSM</th>
+          <th class="font-size-base" >Total Qty</th>
+          <th class="font-size-base">Total Value</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let leader of dataDetailAbsenOn1">
+            <td style="color:black;text-align:right"><font class="font-small-3">{{leader.no}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.cardname}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.spvnya}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.rsm}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.ttlqty}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.ttlvalue}}</font></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ion-content>

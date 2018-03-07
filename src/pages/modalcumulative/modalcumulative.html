@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ModalcumulativePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Leaderboard (This Week)</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()" class="icon-cross" >
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <th>RANKING</th>
+                    <th>SCORE</th>
+                    <th>SPV</th>
+                    <th>ASM/RSM</th>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let leader of dataDetailLeaderBoard1">
+                    <td style="color:black;text-align:right"><font class="font-small-3">{{leader.no}}</font></td>
+                    <td style="color:black;text-align:left"><font class="font-small-3">{{leader.score}} %</font></td>
+                    <td style="color:black;text-align:left"><font class="font-small-3">{{leader.spvname}}</font></td>
+                    <td style="color:black;text-align:left"><font class="font-small-3">{{leader.rsmname}}</font></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+</ion-content>

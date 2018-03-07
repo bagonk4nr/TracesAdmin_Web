@@ -1,0 +1,81 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+  font-family: 'Humanst';
+  src: url('../assets/fonts/roboto-light.woff2') format('woff2'), url('../assets/fonts/roboto-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 8px ;
+}
+* {
+  font-family: 'Humanst';
+}
+
+.hide-card {
+
+  color: lime;
+}
+
+$darkcyan: #54c4d7;
+$red : red;
+$black: black;
+
+.dark {
+  background-color:$black !important;
+  color: #54c4d7;
+  .item {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+   // border-top: 1px solid;
+    //border-bottom: 2px solid;
+    border-color:   darken( $black, 10% );
+    //padding: 20px;
+    color: #54c4d7;
+    max-height: none;
+
+    &:last-child {
+     // border-bottom: 1px solid #333333;
+    }
+    &.current{ background-color:darken( $darkcyan, 10% )   !important;
+      //border-top: 1px solid #464646 !important;
+      //border-bottom: 2px solid #333333 !important;
+      p,h3{opacity: 1;}
+    }
+  }
+  h2,
+  h3,
+  p,
+  a{
+    color: #54c4d7;
+  }
+}
+.dark-head {
+  text-decoration: none;
+}
+
+$color:(
+
+  da: #54c4d7
+);
+
+.da{
+  background-color:#54c4d7;
+}
+
+
+
+

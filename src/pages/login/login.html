@@ -1,0 +1,57 @@
+
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><img src="assets/imgs/tracesadmin32.png" />Traces Admin</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div  class="app-content content container-fluid">
+    <div class="content-wrapper">
+      <div class="content-header row">
+      </div>
+      <div class="content-body"><section class="flexbox-container">
+        <div style="background-color: #54c4d7" class="col-md-4 offset-md-4 col-xs-10 offset-xs-1  box-shadow-2 p-0">
+          <div style="background-color: #54c4d7" class="card border-grey border-lighten-3 m-0">
+            <div style="background-color: #54c4d7" class="card-header no-border">
+              <div style="background-color: #54c4d7" class="card-title text-xs-center">
+                <div style="background-color: #54c4d7" class="p-1"><img style="background-color: #54c4d7" src="assets/imgs/tracesadmin4002.png" alt="branding logo"></div>
+              </div>
+              <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span style="color:white; background-color: #54c4d7" >Welcome User</span></h6>
+              <!--  </div> -->
+              <div  class="card-body collapse in">
+                <div  class="card-block">
+                  <form class="form-horizontal form-simple" >
+                    <fieldset class="form-group position-relative has-icon-left mb-0">
+                      <input type="text" class="form-control form-control-lg input-lg" name="username" id="username" placeholder="Your Username" required [(ngModel)]="userData.username" />
+                      <div class="form-control-position">
+                        <i class="icon-head"></i>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form-group position-relative has-icon-left">
+                      <input type="password" class="form-control form-control-lg input-lg" name="userpassword" id="userpassword" placeholder="Enter Password" required  [(ngModel)]="userData.userpassword" />
+                      <div class="form-control-position">
+                        <i class="icon-key3"></i>
+                      </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login()" ><i class="icon-unlock2"></i> Login</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,96 @@
+<!--
+  Generated template for the TrackingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon  class="icon-android-menu"></ion-icon>
+    </button>
+    <ion-title class="icon-map font-size-small">Report Tracking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <section id="description" class="card">
+    <div class="card-header">
+      <h4 class="card-title"><span class="icon-search7"></span>&emsp;Filter</h4>
+    </div>
+    <div class="card-body collapse in">
+      <div class="card-block">
+        <form class="form-horizontal form-simple" (submit)="filterOutlet()" >
+          <div class="card-text">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+
+                  <ion-item>
+                    <ion-label class="font-small-3" >Date From :</ion-label>
+                    <ion-datetime class="font-small-3" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" 	 name="date" [(ngModel)]="myDate" ></ion-datetime>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label class="font-small-3" >Date To :</ion-label>
+                    <ion-datetime class="font-small-3" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" 	 name="date1" [(ngModel)]="myDate1" ></ion-datetime>
+                  </ion-item>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+
+                  <ion-item>
+                    <ion-label class="font-small-3">Group</ion-label>
+                    <ion-select [(ngModel)]="mySelect" name="rsm" class="font-small-3 rsm">
+                      <ion-option value="9998" >= All RSM/KACAB =</ion-option>
+                      <ion-option *ngFor="let val of dataComboRSM1" value={{val.Usr_ID}} >{{val.Nama_Lengkap}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label class="font-small-3">Jenis Outlet</ion-label>
+                    <ion-select [(ngModel)]="mySelect1" name="jenis" class="font-small-3 jenis">
+                      <ion-option value=""  >= All JENIS =</ion-option>
+                      <ion-option *ngFor="let val of dataComboJenis1" value={{val.StatusID}} >{{val.Status_Name}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+                <div>
+                  <ion-item>
+                    <ion-label class="font-small-3">Sales</ion-label>
+                    <ion-select [(ngModel)]="mySelect2" name="sales" class="font-small-3 sales">
+                      <ion-option value=""  >= All Sales =</ion-option>
+                      <ion-option *ngFor="let val of dataComboSales1" value={{val.Usr_ID}} >{{val.Nama_Lengkap}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-info">
+            <i class="icon-search7"></i> Search
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+<section style="width: 100%; height: 100%" class="card">
+  <div class="card-body collapse in">
+    <div class="card-block">
+      <div class="card-text">
+        <div class="map-container" data-tap-disabled="true">
+          <div id="map1" class="map"></div>
+          <div id="legend" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</ion-content>

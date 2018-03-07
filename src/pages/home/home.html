@@ -1,0 +1,374 @@
+<ion-header>
+
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon  class="icon-android-menu"></ion-icon>
+    </button>
+
+    <ion-title >Home</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="app-content content container-fluid">
+    <div class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left breadcrumbs-left breadcrumbs-top col-md-6 col-xs-12">
+          <div class="breadcrumb-wrapper col-xs-12">
+
+          </div>
+        </div>
+      </div>
+      <div class="content-body"><!-- Statistics -->
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-cyan bg-darken-2 media-left media-middle">
+                    <i class="icon-star3 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-cyan white media-body">
+                    <h5><b>Leaderboard</b></h5>
+                    <h5><table>
+                      <thead>
+<tr>
+                      <th><font size="1" color="white" class="text-bold-500">CUMULATIVE</font>&emsp;</th>
+                      <th><font size="1" color="white" class="text-bold-500">RANKING 1</font>&emsp;</th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" (click)="modalShow()">{{cumulativeTopScore1}}</a></font></td>
+
+                      <td style="color:black;text-align:left"><font size="1" color="white" class="text-bold-400">{{dataTopScores1}}</font></td>
+
+                    </tr>
+                    </tbody></table></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-deep-orange bg-darken-2 media-left media-middle">
+                    <i class="icon-users font-large-2 white"></i>
+                  </div>
+                  <div class="p-1 bg-deep-orange white media-body">
+
+                    <h5><b>Attendance Status</b></h5>
+                    <h5><table>
+                      <thead>
+                      <tr>
+                        <th colspan="2" ><font size="1" color="white" class="text-bold-500">TODAY &emsp;&nbsp;</font></th>
+                        <th colspan="2" style="color:black;text-align:center"><font size="1" color="white" class="text-bold-500">WEEK &emsp;&emsp;</font></th>
+                        <th colspan="2" style="color:black;text-align:center"><font size="1" color="white" class="text-bold-500">MONTH &emsp;&emsp;</font></th>
+                      </tr>
+                      <tr>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">On</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Off</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">On</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Off</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">On</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Off</font></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default" (click)="modalShow1()" >{{dataStatusAbsensi1}}</a></font></td>
+                      <td ><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default1" (click)="modalShow2()" >{{gaMasuk1}}</a></font> </td>
+                      <td ><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-="#default11" (click)="modalShow3()" >{{dataStatusAbsensiWeek1}}</a></font> </td>
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default11ow" (click)="modalShow4()" >{{gaMasukWeek1}}</a></font></td>
+                      <td ><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default11m" (click)="modalShow5()" >{{dataAbsensiMasukMonth1}}</a></font> </td>
+                      <td ><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default11om" (click)="modalShow6()" >{{gaMasukMonth1}}</a></font></td>
+
+                      </tbody></table></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-purple bg-darken-2 media-left media-middle">
+                    <i class="icon-shop font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-purple white media-body">
+                    <h5><b>NOO Registered </b></h5>
+                    <h5><table>
+                      <thead>
+                      <tr>
+                        <th><font size="1" color="white" class="text-bold-500">TODAY</font>&emsp;</th>
+                        <th><font size="1" color="white" class="text-bold-500">WEEK</font>&emsp;</th>
+                        <th ><font size="1" color="white" class="text-bold-500">MONTH</font></th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default2" (click)="modalShow7()">{{dataNOOToday1}}</a></font></td>
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultnoo" (click)="modalShow8()" >{{dataNOOWeek1}}</a></font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#default3" (click)="modalShow9()" >{{dataNOOMonth1}}</a></font></td>
+                    </tr>
+                    </tbody></table></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-pink bg-darken-2 media-left media-middle">
+                    <i class="icon-cart3 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-pink white media-body">
+                    <h5><b>PO Performance</b></h5>
+                    <h5><table>
+                      <thead>
+<tr>
+                      <th><font size="1" color="white" class="text-bold-500">TODAY</font>&emsp;</th>
+                      <th><font size="1" color="white" class="text-bold-500">WEEK</font>&emsp;</th>
+                      <th ><font size="1" color="white" class="text-bold-500">MONTH</font></th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsales" (click)="modalShow10()" >{{dataPOToday1}}</a></font></td>
+                      <td style="color:black;text-align:left"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsales1" (click)="modalShow11()" >{{dataPOWeek1}}</a></font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsales2" (click)="modalShow12()" >{{dataPOMonth1}}</a></font></td>
+
+                    </tr>
+                    </tbody></table></h5>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-teal bg-darken-2 media-left media-middle">
+                    <i class="icon-cart31 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-teal white media-body">
+                    <h5><b>Sales Performance </b></h5>
+                    <h5><table>
+                      <thead>
+                      <tr>
+                        <th><font size="1" color="white" class="text-bold-500">TODAY</font>&emsp;</th>
+                        <th><font size="1" color="white" class="text-bold-500">WEEK</font>&emsp;</th>
+                        <th ><font size="1" color="white" class="text-bold-500">MONTH</font></th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessop" (click)="modalShow13()" >{{dataSalesPToday1}}</a></font></td>
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessop1" (click)="modalShow14()" >{{dataSalesPWeek1}}</a></font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessop2" (click)="modalShow15()" >{{dataSalesPMonth1}}</a></font></td>
+                    </tr>
+                    </tbody></table></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-blue bg-darken-2 media-left media-middle">
+                    <i class="icon-cart2 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-blue white media-body">
+                    <h5><b>Collection</b></h5>
+                    <h5><table>
+                      <thead>
+<tr>
+                      <th><font size="1" color="white" class="text-bold-500">TODAY</font>&emsp;</th>
+                      <th><font size="1" color="white" class="text-bold-500">WEEK</font>&emsp;</th>
+                      <th ><font size="1" color="white" class="text-bold-500">MONTH</font></th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessopcol" (click)="modalShow16()" >{{dataCollectToday1}}</a></font></td>
+                      <td style="color:black;text-align:left"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessopcol1" (click)="modalShow17()" >{{dataCollectWeek1}}</a></font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultsalessopcol2" (click)="modalShow18()" >{{dataCollectMonth1}}</a></font></td>
+
+                    </tr>
+                    </tbody></table></h5>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-green bg-darken-2 media-left media-middle">
+                    <i class="icon-vote font-large-2 white"></i>
+                  </div>
+                  <div class="p-1 bg-green white media-body">
+
+                    <h5><b>Visitation</b></h5>
+                    <h5><table>
+                      <thead>
+                      <tr>
+                        <th colspan="3" ><font size="1" color="white" class="text-bold-500">TODAY </font></th>
+                        <th colspan="3" style="color:black;text-align:center"><font size="1" color="white" class="text-bold-500">WEEK </font></th>
+                        <th colspan="3" style="color:black;text-align:center"><font size="1" color="white" class="text-bold-500">MONTH </font></th>
+                      </tr>
+                      <tr>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Outlet</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Trget</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Avg&nbsp;</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Outlet</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Trget</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Avg&nbsp;</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Outlet</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Trget</font></th>
+                        <th scope='col' ><font size="1" color="white" class="text-bold-400">Avg</font></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultvisit">{{dataVisitToday1}}</a></font></td>
+                      <td ><font size="1" color="white" class="text-bold-400">{{dataVisitPersenToday1}}%</font></td>
+                      <td style="color:black;text-align:center" ><font size="1" color="white" class="text-bold-400">{{dataAVGVisitToday}}</font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultvisitweek">{{dataVisitWeek1}}</a></font></td>
+                      <td ><font size="1" color="white" class="text-bold-400">{{dataVisitPersenWeek1}}%</font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400">{{dataAVGVisitWeek}}</font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultvisit2">{{dataVisitMonth1}}</a></font></td>
+                      <td ><font size="1" color="white" class="text-bold-400">{{dataVisitPersenMonth1}}%</font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400">{{dataAVGVisitMonth}}</font></td>
+                      </tbody></table></h5>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-red bg-darken-2 media-left media-middle">
+                    <i class="icon-lecturer font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-red white media-body">
+                    <h5><b>Customer List</b></h5>
+                    <h5><table>
+                      <thead>
+<tr>
+                      <th><font size="1" color="white" class="text-bold-500">NOO</font>&nbsp;</th>
+                      <th><font size="1" color="white" class="text-bold-500">VERIFIED 1</font>&nbsp;</th>
+                      <th ><font size="1" color="white" class="text-bold-500">VERIFIED 2</font></th>
+
+
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultnoobaru">{{dataNOOToday1}}</a></font></td>
+                      <td style="color:black;text-align:left"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultnoobaru1">0</a></font></td>
+                      <td style="color:black;text-align:center"><font size="1" color="white" class="text-bold-400"><a type="" class="" data-toggle="modal" data-target="#defaultnoobaru2">0</a></font></td>
+
+                    </tr>
+                    </tbody></table></h5>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-orange  bg-darken-2 media-left media-middle">
+                    <i class="icon-user1 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-orange  white media-body">
+                    <table>
+                      <thead>
+<tr>
+                      <th class="teal"><font size="1" color='White' class="text-bold-300">{{dataTimeINAwal1}}&nbsp;</font></th>
+                      <th class="teal"><font size="1" color='White' class="text-bold-300">{{dataTimeINAkhir1}}</font></th>
+                      </tr></thead> <tbody>
+                    <tr>
+
+                      <td><font size="1" color='#f4fcf4' class="text-bold-400">-{{jaminawal1}}-</font></td>
+                      <td ><font size="1" color='#f4fcf4' class="text-bold-400">-{{jaminakhir1}}-</font></td>
+                    </tr><tr>
+                      <td><font size="1" color='#f4fcf4' class="text-bold-400">Time In Awal </font></td>
+                      <td ><font size="1" color='#f4fcf4' class="text-bold-400">Time In Akhir</font></td>
+                    </tr></tbody></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 col-lg-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media">
+                  <div class="p-2 text-xs-center bg-brown bg-darken-2 media-left media-middle">
+                    <i class="icon-user1 font-large-2 white"></i>
+                  </div>
+                  <div class="p-2 bg-brown white media-body">
+                    <table>
+                      <thead><tr>
+                      <th class="teal"><font size="1" color='White' class="text-bold-300">{{dataTimeOutAwal1}}&nbsp;</font></th>
+                      <th class="teal"><font size="1" color='White' class="text-bold-300">{{dataTimeOutAkhir1}}</font></th>
+                      </tr></thead> <tbody>
+                    <tr>
+                      <td><font size="1" color='#f4fcf4' class="text-bold-400">-{{jamoutawal1}}-</font></td>
+                      <td ><font size="1" color='#f4fcf4' class="text-bold-400">-{{jamoutakhir1}}-</font></td>
+                    </tr>
+                    <tr>
+                      <td><font size="1"  color='#f4fcf4' class="text-bold-400">Time Out Awal </font></td>
+                      <td ><font size="1"  color='#f4fcf4' class="text-bold-400">Time Out Akhir</font></td>
+                    </tr></tbody></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</ion-content>

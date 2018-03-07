@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.9.2';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>Traces Admin</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/imgs/tracesadmin32.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <script src="ag-grid.js"></script>
+  <script src="ionic.bundle.js"></script>
+  <!--lib's js-->
+  <script src="ng-cordova.min.js"></script>
+
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
+
+  <script src="angular.js"></script> <!-- add angular framework-->
+  <script src="lrStickyHeader.js"></script> <!-- add lrStickyHeader (script framework agnostic) -->
+  <script src="smart-table.js"></script> <!-- add smart table angular module -->
+  <script src="stStickyHeader.js"></script><!-- load directive -->
+ <!-- <script>
+    angular.module('MyApp',['smart-table']) // bootstrap your app
+  </script> -->
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <script src="jquery.min.js"></script>
+  <script src="jquery.dataTables.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="angular-datatables.min.js"></script>
+  <link rel="stylesheet" href="css/angular-datatables.css">
+
+  <link href="css/ionic.app.css" rel="stylesheet">
+
+  <link href="build/main.css" rel="stylesheet">
+
+  <link href="build/style.css" rel="stylesheet">
+  <!-- path to ionic/angularjs js -->
+  <script src="build/templates.js"></script>
+  <script src="build/ionic-datetimepicker.js"></script>
+
+
+  <link rel="stylesheet" href="ngDialog.min.css">
+  <link rel="stylesheet" href="ngDialog-theme-default.min.css">
+  <script src="ngDialog.min.js"></script>
+  <!-- BEGIN VENDOR CSS-->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <!-- font icons-->
+   <link rel="stylesheet" href="assets/fonts/icomoon.css">
+    <link rel="stylesheet" href="assets/fonts/flag-icon-css/css/flag-icon.min.css">
+     <link rel="stylesheet" href="assets/vendors/css/extensions/pace.css">
+     <link rel="stylesheet" href="assets/vendors/css/ui/prism.min.css">
+     <!-- END VENDOR CSS-->
+  <!-- BEGIN ROBUST CSS-->
+  <link rel="stylesheet" href="assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/colors.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+  <!-- END ROBUST CSS-->
+  <!-- BEGIN Page Level CSS-->
+  <link rel="stylesheet" href="assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" href="assets/css/core/menu/menu-types/vertical-overlay-menu.css">
+  <link rel="stylesheet" href="assets/css/core/colors/palette-gradient.css">
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!-- END Custom CSS-->
+
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCSR0TuxYstJjocGZi8Qd9AOIDm_scigO8"
+          type="text/javascript"></script>
+
+
+
+  <!-- BEGIN VENDOR JS-->
+  <script src="assets/js/core/libraries/jquery.min.js"></script>
+  <script src="assets/vendors/js/ui/tether.min.js"></script>
+  <script src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <script src="assets/vendors/js/ui/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/vendors/js/ui/unison.min.js"></script>
+  <script src="assets/vendors/js/ui/blockUI.min.js"></script>
+  <script src="assets/vendors/js/ui/jquery.matchHeight-min.js"></script>
+  <script src="assets/vendors/js/ui/screenfull.min.js"></script>
+  <script src="assets/vendors/js/extensions/pace.min.js"></script>
+
+  <script  src='assets/js/icheck/icheck.min.js'></script>
+  <script src="assets/js/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/tableexport/tableExport.js"></script>
+  <script src="assets/js/tableexport/jquery.base64.js"></script>
+  <script src="assets/js/tableexport/html2canvas.js"></script>
+  <script src="assets/js/tableexport/jspdf/libs/sprintf.js"></script>
+  <script src="assets/js/tableexport/jspdf/jspdf.js"></script>
+  <script src="assets/js/tableexport/jspdf/libs/base64.js"></script>
+  <!-- BEGIN VENDOR JS-->
+  <!-- BEGIN PAGE VENDOR JS-->
+  <script src="assets/vendors/js/charts/chart.min.js"></script>
+  <script src="assets/vendors/js/ui/prism.min.js"></script>
+  <!-- END PAGE VENDOR JS-->
+  <!-- BEGIN ROBUST JS-->
+  <script src="assets/js/core/app-menu.js"></script>
+  <script src="assets/js/core/app.js"></script>
+  <!-- END ROBUST JS-->
+  <!-- BEGIN PAGE LEVEL JS-->
+  <script src="assets/js/scripts/pages/dashboard-lite.js"></script>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+
+</body>
+</html>

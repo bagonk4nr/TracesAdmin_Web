@@ -1,0 +1,97 @@
+<!--
+  Generated template for the DetailoutletPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail Outlet</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()" class="icon-cross" >
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<table>
+  <tbody>
+    <tr>
+      <td>Nama Outlet</td>&emsp;:<td>{{outletname}}</td>
+    </tr>
+    <tr>
+      <td>Telephon</td>&emsp;:<td>{{telephon}}</td>
+    </tr>
+    <tr>
+      <td>Alamat</td>&emsp;:<td>{{alamat}}</td>
+    </tr>
+    <tr>
+      <td>Provinsi</td>&emsp;:<td>{{propinsi}}</td>
+    </tr>
+    <tr>
+      <td>Kabupaten</td>&emsp;:<td>{{kabupaten}}</td>
+    </tr>
+    <tr>
+      <td>Kecamatan</td>&emsp;:<td>{{kecamatan}}</td>
+    </tr>
+    <tr>
+      <td>Kelurahan</td>&emsp;:<td>{{kelurahan}}</td>
+    </tr>
+    <tr>
+      <td>Status Bangunan</td>&emsp;:<td>{{statusbangunan}}</td>
+    </tr>
+    <tr>
+      <td>Lama Berdiri</td>&emsp;:<td>{{lamaberdiri}}</td>
+    </tr>
+    <tr>
+      <td>Lokasi Outlet</td>&emsp;:<td>{{lokasioutlet}}</td>
+    </tr>
+    <tr>
+      <td>Jenis Outlet</td>&emsp;:<td>{{jenisoutlet}}</td>
+    </tr>
+    <tr>
+      <td>Lama TOP</td>&emsp;:<td>{{lamatop}}</td>
+    </tr>
+    <tr>
+      <td>Status Pembayaran</td>&emsp;:<td>{{statuspembayaran}}</td>
+    </tr>
+    <tr>
+      <td>Nama Sales</td>&emsp;:<td>{{namasales}}</td>
+    </tr>
+    <tr>
+      <td>Nama Pemilik</td>&emsp;:<td>{{namapemilik}}</td>
+    </tr>
+    <tr>
+      <td>Note</td>&emsp;:<td>{{note}}</td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+  <table>
+      <tr>
+          <th>
+            Foto Outlet<p></p>
+            <img  width="330" height= "310" src={{photooutlet1}} />
+          </th>
+      </tr><p></p>
+    <tr>
+      <th>
+        Foto Pemilik<p></p>
+        <img  width="330" height= "310" src={{photopemilik1}} />
+      </th>
+    </tr><p></p>
+    <tr>
+      <th>
+        Foto KTP<p></p>
+        <img  width="330" height= "310" src={{photoktp1}} />
+      </th>
+    </tr>
+  </table>
+</ion-content>

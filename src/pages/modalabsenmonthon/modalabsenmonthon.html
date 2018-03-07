@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ModalabsentodayonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Status Online (This Month)</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()" class="icon-cross" >
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <th class="font-size-base">NO</th>
+          <th class="font-size-base">Date</th>
+          <th class="font-size-base">NIK</th>
+          <th class="font-size-base" >Nama Sales</th>
+          <th class="font-size-base">Clock In</th>
+          <th class="font-size-base">Status</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let leader of dataDetailAbsenOn1">
+            <td style="color:black;text-align:right"><font class="font-small-3">{{leader.no}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.tanggalawal}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.UsrName}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.namalengkap}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.clockinnya}}</font></td>
+            <td style="color:black;text-align:left"><font class="font-small-3">{{leader.jml != 0 ? "ONLINE" : "OFFLINE"}}</font></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ion-content>

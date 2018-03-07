@@ -1,0 +1,109 @@
+<!--
+  Generated template for the VisitasiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon  class="icon-android-menu"></ion-icon>
+    </button>
+
+    <ion-title>Visitasi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <section id="description" class="card">
+    <div class="card-header">
+      <h4 class="card-title"><span class="icon-search7"></span>&emsp;Filter</h4>
+    </div>
+    <div class="card-body collapse in">
+      <div class="card-block">
+        <form class="form-horizontal form-simple" (submit)="filterOutlet()" >
+          <div class="card-text">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+
+                  <ion-item>
+                    <ion-label class="font-small-3">Date From :</ion-label>
+                    <ion-datetime class="font-small-3" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" name="date" [(ngModel)]="myDate" ></ion-datetime>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label class="font-small-3">Date To :</ion-label>
+                    <ion-datetime class="font-small-3" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" name="date1" [(ngModel)]="myDate1" ></ion-datetime>
+                  </ion-item>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+
+                  <ion-item>
+                    <ion-label class="font-small-3">Sales</ion-label>
+                    <ion-select [(ngModel)]="mySelect2" name="sales" class="font-small-3">
+                      <ion-option value=""  >= All Sales =</ion-option>
+                      <ion-option *ngFor="let val of dataComboSales1" value={{val.Usr_ID}} >{{val.Nama_Lengkap}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-info">
+            <i class="icon-search7"></i> Search
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="card-body collapse in">
+    <div class="card-block">
+      <div class="card-text">
+        <div class="table-responsive">
+          <table  datatable  [dtTrigger] ="dtTrigger" class="table table-striped table-bordered table-hover" >
+            <thead>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">No</font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Date</font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">NIK</font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Nama Sales</font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Outlet</font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Check In</font></th>
+            <th style="background:#4bb8cb;color:black;text-align:center"><font class="font-small-3"></font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Check Out</font></th>
+            <th style="background:#4bb8cb;color:black;text-align:center"><font class="font-small-3"></font></th>
+            <th style="background:#4bb8cb;color:white;text-align:center"><font class="font-small-3">Selisih</font></th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let visit of dataVisitasis">
+              <td style="color:black;text-align:right"><font class="font-small-3">{{visit.no}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.tanggalinputin}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.nik}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.namasales}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.cardname}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.timeintrace}}</font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">
+                <a class="btn btn-info" href="#" (click)="showMaps(visit.latitudein, visit.longitudein)">
+                  <i class=" glyphicon glyphicon-map-marker"></i>Maps</a></font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.timeouttrace}}</font></td>
+              <td style="color:black;text-align:left" ><font class="font-small-3">
+                <a class="btn btn-info" href="#" (click)="showMaps1(visit.latitudeout, visit.longtitudeout)">
+                  <i class=" glyphicon glyphicon-map-marker"></i>Maps</a></font></td>
+              <td style="color:black;text-align:left"><font class="font-small-3">{{visit.selisih}}</font></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
